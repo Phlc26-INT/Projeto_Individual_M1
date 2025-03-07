@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Alienígena</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script src="src/scenes/MenuScene.js"></script>
+    <script src="src/scenes/GameScene.js"></script>
+    
+    <style> 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Definindo uma constante para as dimensões da tela do jogo
+        const larguraJogo = 1910;
+        const alturaJogo = 845;
+        // Definindo variáveis para as entidades do jogo
+        var nave; 
+        var fogo;
+        var teclado;
+        var asteroide;
+        var pontuacao;
+        var placar;
+        // Aqui estamos definindo as configurações do jogo: altura e largura da tela, e também a física do jogo.
+        const config = {
+        type: Phaser.AUTO,
+        scale: {
+            mode: Phaser.Scale.RESIZE,
+            parent: 'game',
+            width: '100%',
+            height: '100%',
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 10 },
+                debug: true
+            }
+        },
+        scene: [GameScene,MenuScene]
+    };
+
+        //Aqui o jogo é iniciado e definimos as variáveis do jogo.
+        const game = new Phaser.Game(config);
+        game.scene.start('MenuScene', this.game);
+       
+    </script>
+</body>
+</html>
