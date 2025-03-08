@@ -35,7 +35,7 @@ class GameScene extends Phaser.Scene {
             loop: true // Faz o timer repetir indefinidamente
         });
         pontuacao = 0; //Definimos o placar e zeramos ele.
-        placar = this.add.text(1920, 50, 'Pontuação:'+ pontuacao, {fontSize:'60px', fill:'#FFFFFF'}).setDepth(2); //Aqui estamos adicionando o placar
+        placar = this.add.text(1450, 50, 'Pontuação:'+ pontuacao, {fontSize:'60px', fill:'#FFFFFF'}).setDepth(2); //Aqui estamos adicionando o placar
         teclado = this.input.keyboard.createCursorKeys(); // Aqui estamos capturando as teclas do teclado
 
         //Aqui criamos o botão de reiniciar jogo, que só aparecerá se o jogador perder
