@@ -7,10 +7,10 @@ Space Escape é um jogo de nave espacial onde você precisa desviar de asteroide
 ## Como Jogar 🎮
 
 ### Controles
-- ⬆️ Seta para cima: Move a nave para cima
-- ⬇️ Seta para baixo: Move a nave para baixo
-- ⬅️ Seta para esquerda: Move a nave para esquerda
-- ➡️ Seta para direita: Move a nave para direita
+- ⬆️ Seta para cima: move a nave para cima
+- ⬇️ Seta para baixo: move a nave para baixo
+- ⬅️ Seta para esquerda: move a nave para esquerda
+- ➡️ Seta para direita: move a nave para direita
 
 ### Objetivo
 - Desvie dos asteroides 
@@ -21,6 +21,16 @@ Se sua nave colidir com um asteroide:
 - O jogo termina
 - Sua pontuação final é exibida no canto superior direito
 - Clique no botão "Reiniciar" para jogar novamente
+
+### Prévia do Jogo:
+
+<img src="assets/Menu_Inicial.png" width="700" height ="300">
+
+
+<img src="assets/Tela_Jogo.png" width= "700" height = "300">
+
+
+<img src="assets/Tela_Game_Over.png" width= "700" height = "300">
 
 ## Boa sorte e divirta-se! 🌟
 

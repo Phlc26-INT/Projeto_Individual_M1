@@ -18,7 +18,6 @@ class GameScene extends Phaser.Scene {
         this.load.image('nave', 'assets/Nave.png');
         this.load.image('asteroide', 'assets/Asteroide.png');
         this.load.spritesheet('explosao', 'assets/Explosao.png', { frameWidth: 96, frameHeight: 96 });
-        this.load.image('Restart', 'assets/Restart.png');
         this.load.image('GameOver', 'assets/GameOver.png');
     }
 
