@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo do Alienígena</title>
+    <title> Asteroid Escape</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
     <script src="src/scenes/MenuScene.js"></script>
     <script src="src/scenes/GameScene.js"></script>
@@ -31,14 +31,15 @@
         var asteroide;
         var pontuacao;
         var placar;
+        var fimDoMapa;
         // Aqui estamos definindo as configurações do jogo: altura e largura da tela, e também a física do jogo.
         const config = {
         type: Phaser.AUTO,
         scale: {
             mode: Phaser.Scale.RESIZE,
             parent: 'game',
-            width: '100%',
-            height: '100%',
+            width: larguraJogo,
+            height: alturaJogo,
             autoCenter: Phaser.Scale.CENTER_BOTH
         },
         physics: {

@@ -1,23 +1,19 @@
 class MenuScene extends Phaser.Scene {
     constructor() {
-        super({ key: 'MenuScene' });
+        super({ key: 'MenuScene' }); //Aqui vamos usar o atributo Key da classe pai
     }
     preload() {
-        // Carregando as imagens da nebulosa
-        this.load.image('nebula1', 'assets/Blue_Nebula_01.png');
-        this.load.image('nebula2', 'assets/Blue_Nebula_02.png');
-        this.load.image('nebula3', 'assets/Blue_Nebula_03.png');
+        // Aqui vamos carregar o background do menu
+        this.load.image('Nebula1', 'assets/Blue_Nebula_01.png');
+
     }
 
     create() {
-        // Adicionando o background    
-        this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'nebula1').setOrigin(0, 0);
-        // Título do jogo
-        const title = this.add.text(
-            this.scale.width / 2,
-            this.scale.height / 3,
-            'ASTEROID ESCAPE',
-            {
+        // Adicionando o background como tile para fazer o paralla
+        this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'Nebula1').setOrigin(0, 0);
+        
+        // Aqui estamos colocando o título do jogo
+        const title = this.add.text(this.scale.width / 2, this.scale.height / 3, 'ASTEROID ESCAPE',{
                 fontSize: '55px',
                 fontFamily: 'Arial',
                 color: '#ffffff',
@@ -25,12 +21,8 @@ class MenuScene extends Phaser.Scene {
             }
         ).setOrigin(0.5);
 
-        // Botão de início
-        const startButton = this.add.text(
-            this.scale.width / 2,
-            this.scale.height / 2 + 90,
-            'Iniciar Jogo',
-            {
+        // Aqui vamos criar o botão de início
+        const startButton = this.add.text(this.scale.width / 2,this.scale.height / 2 + 90,'Iniciar Jogo',{
                 fontSize: '32px',
                 fontFamily: 'Arial',
                 color: '#ffffff',
@@ -38,13 +30,20 @@ class MenuScene extends Phaser.Scene {
             })
         .setOrigin(0.5)
         .setInteractive()
-        .on('pointerover', () => startButton.setScale(1.1))
-        .on('pointerout', () => startButton.setScale(1))
         .on('pointerdown', () => this.startGame());
+
+       //Aqui vamos crirar o texto de tutorial
+        this.add.text(300,this.scale.height / 2 + 150,'Como jogar: Controle a nave com as setas do teclado e escape dos asteroides o quanto você conseguir!',{
+            fontSize: '40px',
+            fontFamily: 'Arial',
+            color: '#ffffff',
+            align: 'center',
+            padding: { x: 20, y: 10 },
+        })
 
     }
     startGame() {
-        // Transição para a cena do jogo
+        // Aqui fazemos a transição para a cena do jogo com um fadeout
         this.cameras.main.fade(500, 0, 0, 0);
         this.cameras.main.once('camerafadeoutcomplete', () => {
         this.scene.start('GameScene', this.game);
