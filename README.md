@@ -1,8 +1,8 @@
-# Space Escape 🚀
+# Asteroid Escape 🚀
 [🎮 Clique aqui para jogar agora!](https://phlc26-int.github.io/Projeto_Individual_M1/)
 
 ## Sobre o Jogo
-Space Escape é um jogo de nave espacial onde você precisa desviar de asteroides enquanto viaja pelo espaço. Quanto mais tempo você sobreviver, mais pontos irá somar.
+O Asteroid Escape é um jogo em que você pilota uma nave espacial que precisa desviar de uma chuva infinita de asteroides enquanto viaja pelo espaço nebuloso. Quanto mais tempo você sobreviver, mais pontos irá somar.
 
 ## Como Jogar 🎮
 
