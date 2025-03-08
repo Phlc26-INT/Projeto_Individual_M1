@@ -9,7 +9,7 @@ class MenuScene extends Phaser.Scene {
     }
 
     create() {
-        // Adicionando o background como tile para fazer o paralla
+        // Adicionando o background do menu
         this.add.tileSprite(0, 0, this.scale.width, this.scale.height, 'Nebula1').setOrigin(0, 0);
         
         // Aqui estamos colocando o título do jogo
@@ -29,17 +29,17 @@ class MenuScene extends Phaser.Scene {
                 padding: { x: 20, y: 10 },
             })
         .setOrigin(0.5)
-        .setInteractive()
-        .on('pointerdown', () => this.startGame());
+        .setInteractive() // Essa função faz o botão se tornar interativo (A caixa definida no padding)
+        .on('pointerdown', () => this.startGame()); //Essa  função detecta o click do mouse no botão
 
        //Aqui vamos crirar o texto de tutorial
-        this.add.text(300,this.scale.height / 2 + 150,'Como jogar: Controle a nave com as setas do teclado e escape dos asteroides o quanto você conseguir!',{
-            fontSize: '40px',
+        this.add.text(this.scale.width / 2 ,this.scale.height / 2 + 150,'Como jogar: Controle a nave com as setas do teclado e escape dos asteroides o quanto você conseguir!',{
+            fontSize: '30px',
             fontFamily: 'Arial',
             color: '#ffffff',
             align: 'center',
             padding: { x: 20, y: 10 },
-        })
+        }).setOrigin(0.5)
 
     }
     startGame() {
