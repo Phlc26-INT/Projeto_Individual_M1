@@ -6,7 +6,9 @@
     <title> Asteroid Escape</title>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
     <script src="src/scenes/MenuScene.js"></script>
+    <script src="src/scenes/MenuSceneMobile.js"></script>
     <script src="src/scenes/GameScene.js"></script>
+    <script src="src/scenes/GameSceneMobile.js"></script>
     
     <style> 
         body {
@@ -22,8 +24,8 @@
 <body>
     <script>
         // Definindo uma constante para as dimensões da tela do jogo
-        const larguraJogo = 1910;
-        const alturaJogo = 845;
+        const larguraJogo = window.screen.width;
+        const alturaJogo = window.screen.height;
         // Definindo variáveis para as entidades do jogo
         var nave; 
         var fogo;
@@ -38,8 +40,8 @@
         scale: {
             mode: Phaser.Scale.RESIZE,
             parent: 'game',
-            width: larguraJogo,
-            height: alturaJogo,
+            width: window.screen.width,
+            height: window.screen.height,
             autoCenter: Phaser.Scale.CENTER_BOTH
         },
         physics: {
@@ -49,12 +51,18 @@
                 debug: false
             }
         },
-        scene: [GameScene,MenuScene]
+        scene: [GameScene,MenuScene,MenuSceneMobile,GameSceneMobile]
     };
 
         //Aqui o jogo é iniciado e definimos as variáveis do jogo.
         const game = new Phaser.Game(config);
-        game.scene.start('MenuScene', this.game);
+        if (game.device.os.desktop){
+            game.scene.start('MenuSceneDesktop', this.game);
+        } 
+        else{
+            game.scene.start('MenuSceneMobile', this.game);
+        }
+        
        
     </script>
 </body>
